@@ -36,9 +36,15 @@ $$\tilde{\phi} _j(\mathbf{x}) = \frac{\phi_j(\mathbf{x}) - \mu_j}{\sigma_j}, \qq
 
 - 다음은 feature의 empirical mean $\boldsymbol{\mu}$ 와 empirical covariance $\boldsymbol{\Sigma}$ 로 $\mathbf{A}$ 를 재구성한 행렬이다. (homogeneous coordinate의 bias 차원 포함)
 
-$$\mathbf{A} = \begin{pmatrix} \boldsymbol{\Sigma} + \boldsymbol{\mu}\boldsymbol{\mu}^\top & \boldsymbol{\mu} \\ \boldsymbol{\mu}^\top & 1 \end{pmatrix}$$
+```math
+\mathbf{A} = \begin{pmatrix} \boldsymbol{\Sigma} + \boldsymbol{\mu}\boldsymbol{\mu}^\top & \boldsymbol{\mu} \\ \boldsymbol{\mu}^\top & 1 \end{pmatrix}
+```
 
-> **Note** (수식의 등장 배경): $\breve{\phi_j} \breve{\phi_j}^\top = \begin{pmatrix} \phi_i \\ 1 \end{pmatrix} \begin{pmatrix} \phi_i^\top &  1 \end{pmatrix} = \begin{pmatrix} \phi_i \phi_i^\top & \phi_i \\ \phi_i^\top & 1 \end{pmatrix}$ 를 $i$ 에 대해 평균 (좌상단 항은 공분산 수식을 정리하면 $\boldsymbol{\Sigma} + \boldsymbol{\mu}\boldsymbol{\mu}^\top$ 와 동일)
+> **Note** (수식의 등장 배경): 다음을 $i$ 에 대해 평균 (좌상단 항은 공분산 수식을 정리하면 $\boldsymbol{\Sigma} + \boldsymbol{\mu}\boldsymbol{\mu}^\top$ 와 동일)
+>
+> ```math
+> \breve{\phi_j} \breve{\phi_j}^\top = \begin{pmatrix} \phi_i \\ 1 \end{pmatrix} \begin{pmatrix} \phi_i^\top &  1 \end{pmatrix} = \begin{pmatrix} \phi_i \phi_i^\top & \phi_i \\ \phi_i^\top & 1 \end{pmatrix}
+> ```
 
 세 가지 경우를 보면 정규화가 어째서 필요한지 알 수 있다.
 
