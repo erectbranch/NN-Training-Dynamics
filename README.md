@@ -19,6 +19,18 @@ Lecture notes for courses [Topics in Machine Learning: Neural Network Training D
 
 ### 📖 Foundational Concepts
 
+- [A Toy Model: Linear Regression](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec01/summary01)
+
+  > Linear Regression, Gradient Descent, Invariance to Rigid Transformations(Eigenbasis, Curvature)
+
+  > Convergence Analysis: Coordinatewise Dynamics, Minimum-Cost Subspace, Speed of Convergence(Condition Number), Implicit Regularization
+
+- [Normalization, Double Descent](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec01/summary02)
+
+  > Why Normalize the Features: Normalization, Standardization, Whitening
+
+  > Double Descent(Interpolation Threshold, Overparameterization)
+
 ### 💡 Understanding Neural Networks
 
 ### 🎛 Game Dynamics and Bilevel Optimization
