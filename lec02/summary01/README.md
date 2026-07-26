@@ -61,6 +61,8 @@ $$[\mathbf{J}_{\mathbf{yx}}(\mathbf{x}_0)]_{ij} = \frac{\partial y_i}{\partial x
 
 $$ \Delta \mathbf{y} = \mathcal{R}_{\Delta\mathbf{w}} f(\mathbf{w}) + o(\|\Delta\mathbf{w}\|)$$
 
+> **Note** Vector-Jacobian product (VJP) $\Delta \mathbf{w}^\top \mathbf{J}_{\mathbf{yw}}$ : backpropagation으로 얻을 수 있다.
+
 > 그러나, 1차 근사는 '지금 어느 방향이 내리막인가'만 알 수 있다. - 나머지는 Hessian을 보아야 한다. (2.2절)
 
 ---

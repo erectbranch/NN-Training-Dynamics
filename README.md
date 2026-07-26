@@ -31,6 +31,12 @@ Lecture notes for courses [Topics in Machine Learning: Neural Network Training D
 
   > Double Descent(Interpolation Threshold, Overparameterization)
 
+- [Taylor Approximations](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec02/summary01)
+
+  > Jacobian(JVP/VJP), Hessian(HVP, Rayleigh Quotient), Hessian Spectrum
+
+  > Example: Weak Symmetry Breaking in Regularized Linear Autoencoders
+
 ### 💡 Understanding Neural Networks
 
 ### 🎛 Game Dynamics and Bilevel Optimization
