@@ -37,6 +37,12 @@ Lecture notes for courses [Topics in Machine Learning: Neural Network Training D
 
   > Example: Weak Symmetry Breaking in Regularized Linear Autoencoders
 
+- [Gauss-Newton Hessian, Conjugate Gradient](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec02/summary02)
+
+  > Gauss-Newton Hessian, Exact Line Search, Conjugate Gradient
+
+  > Example: Sensitivity Analysis(response Jacobian)
+
 ### 💡 Understanding Neural Networks
 
 ### 🎛 Game Dynamics and Bilevel Optimization
