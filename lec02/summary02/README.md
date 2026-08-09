@@ -82,9 +82,13 @@ $\mathbf{w}'$ 관점에서 $f(\mathbf{w}, \mathbf{x})$ 와 $\mathbf{J_{zw}}$ 는
 
 - 괄호대로 오른쪽부터: $\mathbf{J} _{\mathbf{zw}} \mathbf{v}$ (JVP 1회) $\rightarrow$ $\mathbf{H} _{\mathbf{z}}(\cdot)$ (출력 공간은 저차원이므로 비용 적음) $\rightarrow$ $\mathbf{J} _{\mathbf{zw}}^\top(\cdot)$ (VJP 1회)
 
-$$\mathbf{G}\mathbf{v} = \mathbf{J}_{\mathbf{zw}}^\top \big( \mathbf{H}_{\mathbf{z}} ( \mathbf{J}_{\mathbf{zw}} \mathbf{v} ) \big)$$
- 
+```math
+\mathbf{G}\mathbf{v} = \mathbf{J}_{\mathbf{zw}}^\top \big( \mathbf{H}_{\mathbf{z}} ( \mathbf{J}_{\mathbf{zw}} \mathbf{v} ) \big)
+```
+
+
 ---
+
 
 ## 2.7 Solving Linear Systems with Conjugate Gradient
 
