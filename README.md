@@ -43,6 +43,12 @@ Lecture notes for courses [Topics in Machine Learning: Neural Network Training D
 
   > Example: Sensitivity Analysis(response Jacobian)
 
+- [Proximal Optimization, Fisher Information](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec03/summary01)
+
+  > Proximal Point Method, Mirror Descent, Natural Gradient, damped Newton
+
+  > KL divergence, Fisher Information Matrix
+
 ### 💡 Understanding Neural Networks
 
 ### 🎛 Game Dynamics and Bilevel Optimization
