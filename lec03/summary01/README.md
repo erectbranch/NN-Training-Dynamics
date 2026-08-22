@@ -61,13 +61,13 @@ f(x_1, x_2) &= \big(a - x_1,\ \sqrt{b}(x_2 - x_1^2)\big), \\
 
 ## 3.2 Proximal Optimization
 
-**proximal point method**은 최적화 과정에서 매 iteration의 거리 변화를 제약한다. $\operatorname{prox}_{\mathcal{J},\lambda}$ (**proximal operator**)는 비용 함수 항과 패널티 항(**proximity term**) $\lambda \rho(\mathbf{u}, \mathbf{w} ^{(k)})$ 으로 구성된다.
+**proximal point method**은 최적화 과정에서 매 iteration의 거리 변화를 제약한다. $\mathrm{prox}_{\mathcal{J},\lambda}$ (**proximal operator**)는 비용 함수 항과 패널티 항(**proximity term**) $\lambda \rho(\mathbf{u}, \mathbf{w} ^{(k)})$ 으로 구성된다.
 
 - $\lambda$ : 패널티 강도를 조절하는 하이퍼파라미터
 
 - $\rho$ : **dissimilarity function**(비유사도 함수)
 
-$$\mathbf{w} ^{(k+1)} = \operatorname{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \arg\min_{\mathbf{u}} \Big[ \mathcal{J}(\mathbf{u}) + \lambda\, \rho(\mathbf{u}, \mathbf{w} ^{(k)}) \Big]$$
+$$\mathbf{w} ^{(k+1)} = \mathrm{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \arg\min_{\mathbf{u}} \Big[ \mathcal{J}(\mathbf{u}) + \lambda\, \rho(\mathbf{u}, \mathbf{w} ^{(k)}) \Big]$$
 
 먼저 패널티를 규정하는 비유사도 함수를 (계산하기 쉬운) 유클리드 거리로 두고, 어떻게 proximal optimization의 해를 구하는지 살펴볼 것이다.
 
@@ -95,7 +95,7 @@ $$\rho(\mathbf{u}, \mathbf{w} ^{(k)}) = \frac{1}{2}\|\mathbf{u} - \mathbf{w} ^{(
 <td>
 
 ```math
-\operatorname{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)})
+\mathrm{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)})
 ```
 
 </td>
@@ -134,7 +134,7 @@ $$\rho(\mathbf{u}, \mathbf{w} ^{(k)}) = \frac{1}{2}\|\mathbf{u} - \mathbf{w} ^{(
 
 #### 3.2.1.1 Implicit Gradient Descent
 
-이제 해 $\mathbf{u} _\star$ 를 구해 볼 것이다. 앞서 proximal operator는 $\arg\min_{\mathbf{u}}$ 조건, 즉 $\mathbf{u} _\star$ 가 최솟점이고 기울기가 0인 상황을 전제한다.
+이제 해 $\mathbf{u} _{\star}$ 를 구해 볼 것이다. 앞서 proximal operator는 $\arg\min _{\mathbf{u}}$ 조건, 즉 $\mathbf{u} _{\star}$ 가 최솟점이고 기울기가 0인 상황을 전제한다.
 
 $$\mathbf{w} ^{(k+1)} = \mathbf{u} _\star = \arg\min_{\mathbf{u}} \underbrace{\Big[ \mathcal{J}(\mathbf{u}) + \frac{\lambda}{2}\|\mathbf{u} - \mathbf{w} ^{(k)}\|^2 \Big]}_{\varphi(\mathbf{u})}, \qquad \nabla_{\mathbf{u}}\, \varphi(\mathbf{u})\Big|_{\mathbf{u} = \mathbf{u} _\star} = \mathbf{0}$$
 
@@ -146,7 +146,7 @@ $$\mathbf{u} _\star - \mathbf{w} ^{(k)} = -\lambda^{-1}\nabla\mathcal{J}(\mathbf
 
 주목할 부분은 정리한 식이 <U>경사 하강법 형태</U>라는 점이다. (차이는 양변의 $\mathbf{u} _\star$ 가 미지수인 경사 하강법이다.) 미지수를 대상으로 하는 경사 하강법이므로 **implicit gradient descent**(암묵적 경사 하강법)이라 지칭한다.
 
-$$\operatorname{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \mathbf{u} _\star = \mathbf{w} ^{(k)} - \lambda^{-1} \nabla \mathcal{J}(\mathbf{u} _\star)$$
+$$\mathrm{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \mathbf{u} _\star = \mathbf{w} ^{(k)} - \lambda^{-1} \nabla \mathcal{J}(\mathbf{u} _\star)$$
 
 $\mathbf{u} _{\star}$ 가 미지수이므로, $\nabla \mathcal{J}(\mathbf{u} _\star)$ 를 어떻게 계산해야 할지가 난감해진다. (애초에 $\mathcal{J}$ 를 최소화하기 위한 과정인데, 이를 위해 $\mathcal{J}$ 를 매 스텝 최소화하는 게 전제조건인 셈이다.) 때문에, proximal optimization은 기본적으로 Taylor 근사로 단순화하여 계산한다.
 
@@ -167,7 +167,7 @@ $\mathbf{u} _{\star}$ 가 미지수이므로, $\nabla \mathcal{J}(\mathbf{u} _\s
 - 비용 함수만 1차 Taylor 근사
 
 $$\begin{align*}
-\operatorname{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) 
+\mathrm{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) 
 &= \arg\min_{\mathbf{u}} \Big[ \mathcal{J}(\mathbf{w} ^{(k)}) + \nabla \mathcal{J}(\mathbf{w} ^{(k)})^\top (\mathbf{u} - \mathbf{w} ^{(k)}) + \lambda\, \rho(\mathbf{u}, \mathbf{w} ^{(k)}) \Big] \\
 &= \arg\min_{\mathbf{u}} \Big[ \nabla \mathcal{J}(\mathbf{w} ^{(k)})^\top \mathbf{u} + \lambda\, \rho(\mathbf{u}, \mathbf{w} ^{(k)}) \Big]
 \end{align*}$$
@@ -194,7 +194,7 @@ $$u_i \propto w_i^{(k)} \exp(-\lambda^{-1} [\nabla\mathcal{J}]_i)$$
 
 > [Natural gradient works efficiently in learning 논문(1998)](https://ieeexplore.ieee.org/document/6790500)
 
-**Natural Gradient**는 비용의 1차 근사+비유사도 함수의 2차 근사 조합이다. 
+**Natural Gradient**는 비용의 1차 근사+비유사도 함수의 2차 근사 조합이다. (엄밀히는 비유사도 함수로 KL divergence를 사용할 때를 지칭, 3.3.2절)
 
 한 가지 유의할 점은, '보폭이 작은 영역에서의 분석'을 전제로 한다. 극한 $\lambda \to \infty$ 를 취할 때 (비용 항을 압도하므로) $\mathbf{u} = \mathbf{w}$ 가 된다. 이때 비유사도 함수를 2차 Taylor 근사한다.
 
@@ -210,7 +210,7 @@ $$\rho(\mathbf{u}, \mathbf{w} ^{(k)}) = \tfrac{1}{2}(\mathbf{u} - \mathbf{w} ^{(
 
 proximal operator를 두 근사로 치환하면 다음과 같다.
 
-$$ \operatorname{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \arg\min_{\mathbf{u}} \Big[ \nabla \mathcal{J}(\mathbf{w} ^{(k)}) ^\top \mathbf{u} + \frac{\lambda}{2} (\mathbf{u} - \mathbf{w} ^{(k)}) ^\top \mathbf{G} (\mathbf{u} - \mathbf{w} ^{(k)}) \Big]$$
+$$ \mathrm{prox}_{\mathcal{J},\lambda}(\mathbf{w} ^{(k)}) = \arg\min_{\mathbf{u}} \Big[ \nabla \mathcal{J}(\mathbf{w} ^{(k)}) ^\top \mathbf{u} + \frac{\lambda}{2} (\mathbf{u} - \mathbf{w} ^{(k)}) ^\top \mathbf{G} (\mathbf{u} - \mathbf{w} ^{(k)}) \Big]$$
 
 argmin을 반영하고 정리한다.
 
@@ -333,7 +333,7 @@ $$\begin{align*}
 \mathbf{G} = \nabla^2_{\mathbf{u}}\,\rho(\mathbf{u}, \boldsymbol\theta)\Big|_{\mathbf{u}=\boldsymbol\theta} 
 &= \int p_{\boldsymbol\theta}\,\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big)\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big)^\top\,d\mathbf{x} \\
 &= \mathbb{E}_{\mathbf{x}\sim p_{\boldsymbol\theta}}\Big[\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big)\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big)^\top\Big] \\
-&= \operatorname{Cov}_{\mathbf{x}\sim p_{\boldsymbol\theta}}\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big) \\
+&= \mathrm{Cov}_{\mathbf{x}\sim p_{\boldsymbol\theta}}\big(\nabla_{\boldsymbol\theta}\log p_{\boldsymbol\theta}\big) \\
 &= \mathbf{F} _{\boldsymbol\theta}
 \end{align*}$$
 
