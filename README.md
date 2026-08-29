@@ -49,6 +49,12 @@ Lecture notes for courses [Topics in Machine Learning: Neural Network Training D
 
   > KL divergence, Fisher Information Matrix
 
+- [Pullback Metrics, Invariance](https://github.com/erectbranch/NN-Training-Dynamics/tree/master/lec03/summary02)
+
+  > Pullback Dissimilarity(Pullback Metric, Relationship to Other Metrics)
+
+  > Invariance(covector, Riemannian metric, Natural Gradient)
+
 ### 💡 Understanding Neural Networks
 
 ### 🎛 Game Dynamics and Bilevel Optimization

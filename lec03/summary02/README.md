@@ -240,7 +240,7 @@ w_1 \leftarrow \overbrace{w_1}^{\text{\$/min}} - \underbrace{\alpha}_{\$^2/\math
 >
 > - 즉, 경사 하강 스텝이 원래 좌표계로 환산했을 때보다 **3600배** 커진다.
 
-차원 오류를 해결하려면, $w_2$ 기준으로는 업데이트에 $\$^2/\mathrm{ft}^2$ 를 곱해주는 변환이 필요하다. (이것이 pullback metric의 역변환 $\mathbf{G}^{-1}$ 행렬에서, 대각 성분이 하는 역할이다.)
+차원 오류를 해결하려면, $w_2$ 기준으로는 업데이트에 $`\$^2/\mathrm{ft} ^2`$ 를 곱해주는 변환이 필요하다. (이것이 pullback metric의 역변환 $\mathbf{G}^{-1}$ 행렬에서, 대각 성분이 하는 역할이다.)
 
 ---
 
@@ -327,6 +327,6 @@ $$\tilde{\nabla} \mathcal{J}(\mathbf{w}) = \mathbf{G} _{\mathbf{w}}^{-1} \nabla 
 
 > **Note**: natural의 의미
 >
-> $\mathbf{G} _{\mathbf{w}}$ 를 좌표와 무관하게 정의하면(출력 공간에서 pull back한 metric, Fisher), 업데이트도 좌표 선택에 불변이다.
+> $\mathbf{G} _{\mathbf{w}}$ 를 좌표와 무관하게 정의하면(출력 공간에서 pull back한 metric, Fisher), 업데이트도 좌표 선택에 불변(**invariance**)이다.
 
 ---
